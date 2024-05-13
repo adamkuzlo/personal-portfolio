@@ -615,7 +615,8 @@ body {
   font-family: "Varela", sans-serif;
   margin: 0;
   font-size: 32px;
-  color: #196fc2;
+  color: #fff;
+  text-shadow: 2px 2px 5px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -2076,7 +2077,7 @@ body {
 
 /* Sections background: Me */
 .section-me {
-  background: url(../img/portfolio-7.jpg) center no-repeat fixed;
+  background: url(../img/section-bg.jpg) center no-repeat fixed;
 }
 
 .section-me h2 {
@@ -2085,30 +2086,37 @@ body {
   position: relative;
 }
 
-/* Sections background: Twitter */
-.section-twitter {
-  background: url(../img/portfolio-8.jpg) center no-repeat fixed;
+/* Sections background: contact */
+.section-contact {
+  background: url(../img/contact-bg.jpg) center no-repeat fixed;
 }
 
-.section-twitter .container {
+.section-contact .container {
   max-width: 770px;
 }
 
-.section-twitter .rectangle {
+.section-contact .container h1 {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px;
+}
+
+.section-contact .rectangle {
   margin: 0 auto;
   box-shadow: none;
   display: inline-block;
 }
 
-.section-twitter .rectangle i {
+.section-contact .rectangle i {
   color: #ffffff;
 }
 
-.section-twitter .rectangle + p {
+.section-contact .rectangle + p {
   margin-top: 60px;
 }
 
-.section-twitter .rectangle + p:before {
+.section-contact .rectangle + p:before {
   content: "";
   position: absolute;
   top: -30px;
@@ -2134,10 +2142,10 @@ body {
   .section-quote p {
     font-size: 28px;
   }
-  .section-twitter .rectangle + p {
+  .section-contact .rectangle + p {
     margin-top: 40px;
   }
-  .section-twitter .rectangle + p:before {
+  .section-contact .rectangle + p:before {
     top: -20px;
   }
 }
@@ -2173,11 +2181,6 @@ body {
   }
 }
 
-/* Section: Contact */
-.section-contact .container {
-  max-width: 770px;
-}
-
 .section-contact .container form {
   margin-top: 70px;
 }
@@ -2196,10 +2199,13 @@ body {
 
 .form-control {
   border: 0;
-  border-bottom: 1px solid #dddddd;
+  border: 1px solid #dddddd;
   box-shadow: none;
+  color: #fff;
   border-radius: 0;
   -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
 }
 
 .form-control:focus {
@@ -2416,4 +2422,15 @@ textarea.form-control {
     height: 36px;
     width: 36px;
   }
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
 }
