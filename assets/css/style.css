@@ -267,7 +267,6 @@ body {
 .img-res {
   display: block;
   width: 100vw;
-  height: 100vh;
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
@@ -1884,16 +1883,16 @@ body {
 
 .portfolio-item {
   overflow: hidden;
+  margin: 5px;
 }
 
 .portfolio-item .portfolio-item-thumb {
   position: relative;
-  height: 250px;
 }
 
 .portfolio-item .portfolio-item-thumb:after {
   content: "";
-  background-color: #196fc2;
+  background-color: #5e9cd6;
   position: absolute;
   left: 0;
   right: 0;
@@ -1933,10 +1932,11 @@ body {
 .portfolio-item .portfolio-info {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 5px;
+  right: 5px;
+  background-color: #196fc2;
+  color: #fff;
   height: 75px;
-  padding: 0 10px;
   text-align: center;
   transform: translateY(75px);
   -webkit-transform: translateY(75px);
@@ -2087,6 +2087,17 @@ body {
   background: url(../img/section-bg.jpg) center no-repeat fixed;
 }
 
+.hero-text {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  z-index: 10;
+  padding: 20px;
+  text-align: center;
+}
+
 .section-me h2 {
   margin: 0;
   color: #ffffff;
@@ -2106,7 +2117,6 @@ body {
   position: relative;
   color: #fff;
   text-transform: uppercase;
-  text-shadow: 2px 2px 5px;
 }
 
 .section-contact .rectangle {
