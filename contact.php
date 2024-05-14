@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $formData['message'];
 
     // Send email
-    $to = "recipient@example.com"; // Change this to the recipient's email address
+    $to = "steven.rogers.me@gmail.com"; // Change this to the recipient's email address
     $subject = "New Contact Form Submission";
     $body = "Name: $name\nEmail: $email\nMessage: $message";
 
@@ -30,4 +30,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     http_response_code(405);
     echo "Method Not Allowed";
 }
-?>
