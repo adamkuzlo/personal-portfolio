@@ -1,16 +1,19 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['submit'])) {
+    $to = "steven.rogers.me@gmail.com"; // Your email address
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $from = $_POST['email'];
     $message = $_POST['message'];
+    $subject = "Contact Form Submission";
+    $headers = "From:" . $from;
+    $result = mail($to, $subject, $message, $headers);
 
-    $to = 'steven.rogers.me@gmail.com';
-    $subject = 'New Contact Form Submission';
-    $body = "Name: $name\nEmail: $email\nMessage: $message";
+    if ($result) {
+        echo '<script type="text/javascript">alert("Your message was sent!");</script>';
+        echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 
-    if (mail($to, $subject, $body)) {
-        echo 'Email sent successfully.';
     } else {
-        echo 'Error sending email.';
+        echo '<script type="text/javascript">alert("Oops! Your message wasn’t sent. Try again later.");</script>';
+        echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
     }
 }
