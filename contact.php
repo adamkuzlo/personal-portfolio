@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send email
     $to = "steven.rogers.me@gmail.com"; // Change this to the recipient's email address
     $subject = "New Contact Form Submission";
-    $body = "Name: $name\nEmail: $email\nMessage: $message";
+    $body = "Name" . $name . "Email" . $email . "Message" . $message;
 
     if (mail($to, $subject, $body)) {
         // Email sent successfully
