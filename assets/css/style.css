@@ -1790,7 +1790,7 @@ body {
     content: none;
   }
   .timeline > li .timeline-rectangle {
-    disply: none;
+    display: none;
   }
 }
 
@@ -2426,11 +2426,17 @@ textarea.form-control {
 
 #toast-container {
   position: fixed;
-  bottom: 20px;
+  top: 90px;
   right: 20px;
-  background-color: #333;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   display: none;
+}
+
+.toast-success {
+  background-color: #3bd9a7;
+}
+.toast-fail {
+  background-color: #e43b3b;
 }

@@ -8,10 +8,6 @@
 
     <title>Pixel Perfect Portfolio</title>
 
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <meta name="keywords" content="" />
-
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
@@ -25,11 +21,7 @@
 
     <!-- Favicon
     ================================================== -->
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="assets/img/apple-touch-icon.png"
-    />
+
     <link
       rel="icon"
       type="image/png"
@@ -1146,7 +1138,7 @@
           <h1>CONTACT Adam</h1>
           <p class="section-subtitle"><span>Here i am</span></p>
           <div class="row">
-            <form>
+            <form action="mail_send.php" method="post" enctype="text/plain">
               <div class="col-md-4">
                 <input
                   class="form-control"
@@ -1188,9 +1180,13 @@
               </div>
 
               <div class="col-sm-12">
-                <button class="btn btn-inverted" style="color: #fff">
-                  Send Message
-                </button>
+                <input
+                  class="btn btn-inverted"
+                  type="submit"
+                  style="color: #fff"
+                  id="submit_btn"
+                  value="Send Message"
+                />
               </div>
             </form>
           </div>
@@ -1312,71 +1308,7 @@
     <!-- Touchswipe JS -->
     <script src="assets/js/touchswipe.min.js"></script>
 
-    <!-- Email JS -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
-
-    <script>
-      const texts = [
-        "Sling code like a wizard",
-        "Sprinkle some CSS like confetti",
-        "Wrangle databases like a cowboy at a rodeo",
-      ];
-      const heroJob = document.querySelector(".hero-job span");
-      let index = 0;
-
-      function showNextText() {
-        heroJob.textContent = texts[index];
-        index = (index + 1) % texts.length;
-      }
-
-      function animateText() {
-        setInterval(() => {
-          showNextText();
-        }, 4000);
-      }
-
-      animateText();
-    </script>
-
-    <script>
-      function showToast(message, duration) {
-        const toastContainer = document.getElementById("toast-container");
-        toastContainer.textContent = message;
-        toastContainer.style.display = "block";
-
-        setTimeout(() => {
-          toastContainer.style.display = "none";
-        }, duration);
-      }
-
-      document
-        .querySelector("form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          emailjs.init("YOUR_USER_ID");
-
-          emailjs
-            .send("service_uwbgfzm", "YOUR_TEMPLATE_ID", {
-              name: document.querySelector('input[name="name"]').value,
-              email: document.querySelector('input[name="email"]').value,
-              subject: document.querySelector('input[name="subject"]').value,
-              message: document.querySelector('textarea[name="message"]').value,
-            })
-            .then(
-              function (response) {
-                console.log("Email sent successfully", response);
-                showToast("Email sent successfully", 3000); // Show success toast for 3 seconds
-              },
-              function (error) {
-                console.log("Error sending email", error);
-                showToast("Error sending email", 3000); // Show error toast for 3 seconds
-              }
-            );
-        });
-    </script>
   </body>
 </html>
