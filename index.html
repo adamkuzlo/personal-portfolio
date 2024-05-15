@@ -35,7 +35,6 @@
       href="assets/img/favicon-16x16.png"
     />
     <link rel="icon" sizes="16x16" href="assets/img/favicon.ico" />
-    <link rel="manifest" href="assets/img/manifest.json" />
     <link
       rel="mask-icon"
       href="assets/img/safari-pinned-tab.svg"
@@ -59,6 +58,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
       .hero-job {
         display: block;
@@ -1124,7 +1125,7 @@
           <h1>CONTACT Adam</h1>
           <p class="section-subtitle"><span>Here i am</span></p>
           <div class="row">
-            <form id="contact">
+            <form id="contactForm">
               <div class="col-md-4">
                 <input
                   class="form-control"
@@ -1297,28 +1298,34 @@
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
 
+    <!-- contact form -->
     <script>
       document
-        .getElementById("contact")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
-          var message = document.getElementById("message").value;
-          var data = {
-            name: name,
-            email: email,
-            message: message,
-          };
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "contact.php", true);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send(JSON.stringify(data));
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-              alert("Message sent successfully");
-            }
-          };
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+          const subject = document.getElementById("subject").value;
+          emailjs.init("bZfXA2WrU6c9dIiTC");
+          emailjs
+            .send("service_d3oqlje", "template_8z7lhsq", {
+              name: name,
+              email: email,
+              message: message,
+              subject: subject,
+            })
+            .then(
+              (response) => {
+                alert("Message sent successfully!");
+              },
+              (error) => {
+                // console.error("FAILED...", error);
+                alert("Failed to send message.");
+              }
+            );
         });
     </script>
   </body>
