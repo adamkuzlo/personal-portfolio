@@ -2440,20 +2440,30 @@ textarea.form-control {
     width: 36px;
   }
 }
-
-#toast-container {
+.toast {
   position: fixed;
-  top: 90px;
-  right: 20px;
+  top: 100px;
+  right: 5px;
+  z-index: 9999;
+  font-size: 2rem;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   display: none;
 }
 
-.toast-success {
-  background-color: #3bd9a7;
+.toast.show {
+  display: block;
 }
-.toast-fail {
-  background-color: #e43b3b;
+
+.toast.hide {
+  display: none;
+}
+
+.submit-success {
+  background-color: #29aa4f;
+}
+
+.submit-fail {
+  background-color: #c02020;
 }

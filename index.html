@@ -1204,7 +1204,7 @@
       </section>
       <!-- /.section-networks-->
       <!-- End Social Networks section -->
-      <div id="toast-container"></div>
+      <div id="toast" class="toast hide"></div>
     </main>
     <!-- /#main -->
     <!-- End Main content -->
@@ -1297,36 +1297,5 @@
 
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
-
-    <!-- contact form -->
-    <script>
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const message = document.getElementById("message").value;
-          const subject = document.getElementById("subject").value;
-          emailjs.init("bZfXA2WrU6c9dIiTC");
-          emailjs
-            .send("service_d3oqlje", "template_8z7lhsq", {
-              name: name,
-              email: email,
-              message: message,
-              subject: subject,
-            })
-            .then(
-              (response) => {
-                alert("Message sent successfully!");
-              },
-              (error) => {
-                // console.error("FAILED...", error);
-                alert("Failed to send message.");
-              }
-            );
-        });
-    </script>
   </body>
 </html>

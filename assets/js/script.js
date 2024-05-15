@@ -42,6 +42,43 @@ $(
       event.preventDefault();
     });
 
+    // submit form
+    $("#contactForm").on("submit", function (event) {
+      event.preventDefault();
+      const name = $("#name").val();
+      const email = $("#email").val();
+      const message = $("#message").val();
+      const subject = $("#subject").val();
+
+      emailjs.init("bZfXA2WrU6c9dIiTC");
+
+      emailjs
+        .send("service_d3oqlje", "template_8z7lhsq", {
+          name: name,
+          email: email,
+          message: message,
+          subject: subject,
+        })
+        .then(function (response) {
+          // Show success toast
+          $("#toast")
+            .text("Message sent successfully!")
+            .addClass("show submit-success");
+          setTimeout(function () {
+            $("#toast").removeClass("show submit-success");
+          }, 3000); // Hide toast after 3 seconds
+        })
+        .catch(function (error) {
+          // Show error toast
+          $("#toast")
+            .text("Failed to send message.")
+            .addClass("show submit-fail");
+          setTimeout(function () {
+            $("#toast").removeClass("show submit-fail");
+          }, 3000); // Hide toast after 3 seconds
+        });
+    });
+
     //Counters
     if ($(".counter-start").length > 0) {
       $(".counter-start").each(function () {
