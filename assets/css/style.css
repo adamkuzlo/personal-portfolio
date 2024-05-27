@@ -434,7 +434,7 @@ body {
   width: 100%;
   display: table;
   position: relative;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 .background-overlay:before {
@@ -452,6 +452,12 @@ body {
   .hero {
     background: url(../img/hero-2.jpg) center no-repeat;
     background-size: cover;
+  }
+}
+@media only screen and (min-width: 1060px) {
+  .hero {
+    background: url(../img/hero-2.jpg) center no-repeat;
+    background-size: 100% 100%;
   }
 }
 
