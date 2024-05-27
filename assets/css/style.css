@@ -429,7 +429,7 @@ body {
 /* HERO
 ================================================== */
 .hero {
-  background: url(../img/hero.jpg) center no-repeat;
+  background: url(../img/hero.svg) center no-repeat;
   height: 100%;
   width: 100%;
   display: table;
@@ -450,14 +450,8 @@ body {
 
 @media only screen and (max-width: 766px) {
   .hero {
-    background: url(../img/hero-2.jpg) center no-repeat;
+    background: url(../img/hero-2.svg) center no-repeat;
     background-size: cover;
-  }
-}
-@media only screen and (min-width: 1060px) {
-  .hero {
-    background: url(../img/hero-2.jpg) center no-repeat;
-    background-size: 100% 100%;
   }
 }
 
